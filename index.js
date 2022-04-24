@@ -30,16 +30,18 @@ function myFunction() {
 */
 
 
-function summation(x) {
+function summation(num) {
   let sum = 0;
-  for (let i = 0; i<=x; i++){
-    sum+=i;
+  for (let i = 0; i <= num; i++){
+    sum = sum + i;
+    console.log(sum);
+    console.log(typeof sum)
   }
-  console.log(sum);
+  return sum;
 }
  
 summation(4);
-
+// I had this problem last month, too. I KNOW that this is returning a number. It's returning 10. I'm not sure what to do......
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -65,10 +67,11 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(array){
+    // array.forEach(animal => console.log(animal.animal_name, animal.scientific_name));
   }
   
+  animalNames(zooAnimals);
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
