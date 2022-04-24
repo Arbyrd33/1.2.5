@@ -74,11 +74,12 @@ const zooAnimals = [
 
   function animalNames(array){
     let namesArray = []
-    array.forEach(animal => namesArray.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
+    array.forEach(animal => namesArray.push({name: animal.animal_name, scientific: animal.scientific_name}));
+    console.log(namesArray);
     return namesArray;
   }
   
-  // animalNames(zooAnimals);
+  animalNames(zooAnimals);
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -140,7 +141,7 @@ const zooAnimals = [
       let result = arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
       console.log(result);  // 7
     }
-    exampleCode(zooAnimals)
+    // exampleCode(zooAnimals)
 
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
