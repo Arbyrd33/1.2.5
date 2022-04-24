@@ -34,14 +34,16 @@ function summation(num) {
   let sum = 0;
   for (let i = 0; i <= num; i++){
     sum = sum + i;
-    console.log(sum);
-    console.log(typeof sum)
+    console.log(`${sum} is a ${typeof sum}`)
   }
+  console.log(`${sum} was returned.`)
   return sum
 }
  
-summation(4);
-// I had this problem last month, too. I KNOW that this is returning a number. It's returning 10. I'm not sure what to do......
+// summation(4);
+
+
+      // I had this problem last month, too. I KNOW that this is returning a number. It's returning 10. I'm not sure what to do......
 
 // So, update, I figured it out. Nifty.
 
@@ -76,7 +78,7 @@ const zooAnimals = [
     return namesArray;
   }
   
-  animalNames(zooAnimals);
+  // animalNames(zooAnimals);
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -92,7 +94,7 @@ const zooAnimals = [
     return array.map(animals => `${animals.animal_name.toLowerCase()}`);
   }
   
-  lowerCaseNames(zooAnimals)
+  // lowerCaseNames(zooAnimals)
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
@@ -102,10 +104,13 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+    const endangered = array.filter(animals => animals.population < 5)
+    console.log(endangered)
+    return endangered;
   }
   
+  // lowPopulationAnimals(zooAnimals);
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -116,11 +121,27 @@ const zooAnimals = [
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(array){
+    const totalPop = array.population.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      initialValue
+      );
+
   }
-  
-  
+
+  // var arr = [{x:1}, {x:2}, {x:4}];
+  // var result = arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
+  // console.log(result);  // 7
+  // This is some example code from Cassey Chu on Stack Overflow, on this page: https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties
+  // I pasted it here for reference so that I could stop flipping through screens to understand it in the context of my own code. I pasted it below to tinker with different values until I got the hang of the monkey bars.
+    function exampleCode(arr){
+      let Array = [...arr];
+      console.log(Array)
+      let result = arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
+      console.log(result);  // 7
+    }
+    exampleCode(zooAnimals)
+
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
   Use the higher-order function called consume to do the following:
