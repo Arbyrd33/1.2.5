@@ -17,7 +17,7 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+console.log(this);
 
 
 
