@@ -37,11 +37,13 @@ function summation(num) {
     console.log(sum);
     console.log(typeof sum)
   }
-  return sum;
+  return sum
 }
  
 summation(4);
 // I had this problem last month, too. I KNOW that this is returning a number. It's returning 10. I'm not sure what to do......
+
+// So, update, I figured it out. Nifty.
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -67,8 +69,11 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
+
   function animalNames(array){
-    // array.forEach(animal => console.log(animal.animal_name, animal.scientific_name));
+    let namesArray = []
+    array.forEach(animal => namesArray.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
+    return namesArray;
   }
   
   animalNames(zooAnimals);
