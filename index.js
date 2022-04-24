@@ -17,8 +17,7 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-console.log(this);
-
+// `nestedFunction()` is inside the scope of `myFunction()`
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
@@ -30,11 +29,17 @@ console.log(this);
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
 
+function summation(x) {
+  let sum = 0;
+  for (let i = 0; i<=x; i++){
+    sum+=i;
   }
+  console.log(sum);
+}
  
+summation(4);
+
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
