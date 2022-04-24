@@ -74,7 +74,7 @@ const zooAnimals = [
 
   function animalNames(array){
     let namesArray = []
-    array.forEach(animal => namesArray.push({name: animal.animal_name, scientific: animal.scientific_name}));
+    array.forEach(animal => namesArray.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
     console.log(namesArray);
     return namesArray;
   }
