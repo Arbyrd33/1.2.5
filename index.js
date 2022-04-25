@@ -17,7 +17,7 @@ function myFunction() {
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀:
 
 // `nestedFunction()` is inside the scope of `myFunction()`
-myFunction();
+// myFunction();
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:
@@ -118,22 +118,17 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-function animalNames(array, index) {
-  // console.log(`1: enter animalNames()`)
-  // x = index;
-  x = Math.floor(Math.random() * array.length) + 1;
-  // console.log(x);
-  // console.log(`The first thing I need to do is make sure that I pass the test. I've created a function passTest() that will be called at the very last part of the function in order to pass the tests.`)
-    function passTest(){
-      // console.log(`2: enter passTest()`);
-      let testArray = [];
-      array.forEach((animal) =>
-      testArray.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
-      // console.log(`Animal names are being returned as a string. The test is passing. Don't edit this code.`)
-      // console.log(`Exit passTest()`)
-      return testArray;
-    }
-  // Tests are passed.
+function animalNames(array){
+  // console.log(`2: enter passTest()`);
+  let testArray = [];
+  array.forEach((animal) => testArray.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
+  // console.log(`Animal names are being returned as a string. The test is passing. Don't edit this code.`)
+  // console.log(`Exit passTest()`)
+  return testArray;
+}
+animalNames(zooAnimals);
+
+function animalNames2(array) {
     function nameGrabber(y) {
       // console.log(y);
       // console.log(`2: enter nameGrabber()`)
@@ -179,15 +174,11 @@ function animalNames(array, index) {
       // console.log(`exit nameGrabber()`)
       }
 
-  passTest();
+  let x = Math.floor(Math.random() * array.length) + 1;
   nameGrabber(x);
 } 
 
-
-
-
-
-animalNames(zooAnimals);
+animalNames2(zooAnimals);
 
 
 
@@ -239,20 +230,7 @@ function USApop(array) {
   );
 }
 
-// var arr = [{x:1}, {x:2}, {x:4}];
-// var result = arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
-// console.log(result);  // 7
-// This is some example code from Cassey Chu on Stack Overflow, on this page: https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties
-// I pasted it here for reference so that I could stop flipping through screens to understand it in the context of my own code. I pasted it below to tinker with different values until I got the hang of the monkey bars.
-function exampleCode(arr) {
-  let Array = [...arr];
-  console.log(Array);
-  let result = arr.reduce(function (acc, obj) {
-    return acc + obj.x;
-  }, 0);
-  console.log(result); // 7
-}
-// exampleCode(zooAnimals)
+
 
 // 🦁🦁🦁 Callbacks 🦁🦁🦁
 /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
