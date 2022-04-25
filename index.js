@@ -287,7 +287,7 @@ function greeting(first, last) {
 
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use CuboidMaker to do the following:
- - Receives a single argument -- an object with the follwoing keys:
+ - Receives a single argument -- an object with the following keys:
   + length
   + width
   + height
