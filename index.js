@@ -224,13 +224,13 @@ function lowPopulationAnimals(array) {
   */
 
 function USApop(array) {
-  const totalPop = array.population.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,
-    initialValue
-  );
+  const totalPop = array.reduce(function(accumulator, animal) {return accumulator + animal.population}, 0);
+  console.log(totalPop);
+  console.log(typeof totalPop);
+  return totalPop;
 }
 
-
+USApop(zooAnimals);
 
 // 🦁🦁🦁 Callbacks 🦁🦁🦁
 /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
