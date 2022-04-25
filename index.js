@@ -13,12 +13,11 @@ function myFunction() {
   }
   nestedFunction();
 }
-//myFunction();
 
-//🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
+//🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀:
 
 // `nestedFunction()` is inside the scope of `myFunction()`
-
+myFunction();
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:
@@ -29,21 +28,19 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-
 function summation(num) {
   let sum = 0;
-  for (let i = 0; i <= num; i++){
+  for (let i = 0; i <= num; i++) {
     sum = sum + i;
-    console.log(`${sum} is a ${typeof sum}`)
+    console.log(`${sum} is a ${typeof sum}`);
   }
-  console.log(`${sum} was returned.`)
-  return sum
+  console.log(`${sum} was returned.`);
+  return sum;
 }
- 
+
 // summation(4);
 
-
-      // I had this problem last month, too. I KNOW that this is returning a number. It's returning 10. I'm not sure what to do......
+// I had this problem last month, too. I KNOW that this is returning a number. It's returning 10. I'm not sure what to do......
 
 // So, update, I figured it out. Nifty.
 
@@ -51,19 +48,69 @@ function summation(num) {
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
 
 const zooAnimals = [
-    { animal_name: "Jackal, asiatic", population: 5, scientific_name: "Canis aureus", state: "Kentucky" },
-    { animal_name: "Screamer, southern", population: 1, scientific_name: "Chauna torquata", state: "Alabama" },
-    { animal_name: "White spoonbill", population: 8, scientific_name: "Platalea leucordia", state: "Georgia" },
-    { animal_name: "White-cheeked pintail", population: 1, scientific_name: "Anas bahamensis", state: "Oregon" },
-    { animal_name: "Black-backed jackal", population: 2, scientific_name: "Canis mesomelas", state: "Washington" },
-    { animal_name: "Brolga crane", population: 9, scientific_name: "Grus rubicundus", state: "New Mexico" },
-    { animal_name: "Common melba finch", population: 5, scientific_name: "Pytilia melba", state: "Pennsylvania" },
-    { animal_name: "Pampa gray fox", population: 10, scientific_name: "Pseudalopex gymnocercus", state: "Connecticut" },
-    { animal_name: "Hawk-eagle, crowned", population: 10, scientific_name: "Spizaetus coronatus", state: "Florida" },
-    { animal_name: "Australian pelican", population: 5, scientific_name: "Pelecanus conspicillatus", state: "West Virginia" },
-  ];
-  
-  /* 🦁🦁🦁 Request 1: .forEach() 🦁🦁🦁
+  {
+    animal_name: "Jackal, asiatic",
+    population: 5,
+    scientific_name: "Canis aureus",
+    state: "Kentucky",
+  },
+  {
+    animal_name: "Screamer, southern",
+    population: 1,
+    scientific_name: "Chauna torquata",
+    state: "Alabama",
+  },
+  {
+    animal_name: "White spoonbill",
+    population: 8,
+    scientific_name: "Platalea leucordia",
+    state: "Georgia",
+  },
+  {
+    animal_name: "White-cheeked pintail",
+    population: 1,
+    scientific_name: "Anas bahamensis",
+    state: "Oregon",
+  },
+  {
+    animal_name: "Black-backed jackal",
+    population: 2,
+    scientific_name: "Canis mesomelas",
+    state: "Washington",
+  },
+  {
+    animal_name: "Brolga crane",
+    population: 9,
+    scientific_name: "Grus rubicundus",
+    state: "New Mexico",
+  },
+  {
+    animal_name: "Common melba finch",
+    population: 5,
+    scientific_name: "Pytilia melba",
+    state: "Pennsylvania",
+  },
+  {
+    animal_name: "Pampa gray fox",
+    population: 10,
+    scientific_name: "Pseudalopex gymnocercus",
+    state: "Connecticut",
+  },
+  {
+    animal_name: "Hawk-eagle, crowned",
+    population: 10,
+    scientific_name: "Spizaetus coronatus",
+    state: "Florida",
+  },
+  {
+    animal_name: "Australian pelican",
+    population: 5,
+    scientific_name: "Pelecanus conspicillatus",
+    state: "West Virginia",
+  },
+];
+
+/* 🦁🦁🦁 Request 1: .forEach() 🦁🦁🦁
   The zoos want to display both the scientific name and the animal name in front of the habitats. 
     1. Receive the zooAnimals array as an argument passed from a parameter 
     2. Use .forEach() to populate a new array called displayNames that will be an array of strings with only the animal name and scientific name of each animal
@@ -71,17 +118,80 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
+function animalNames(array, index) {
+  // console.log(`1: enter animalNames()`)
+  // x = index;
+  x = Math.floor(Math.random() * array.length) + 1;
+  // console.log(x);
+  // console.log(`The first thing I need to do is make sure that I pass the test. I've created a function passTest() that will be called at the very last part of the function in order to pass the tests.`)
+    function passTest(){
+      // console.log(`2: enter passTest()`);
+      let testArray = [];
+      array.forEach((animal) =>
+      testArray.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
+      // console.log(`Animal names are being returned as a string. The test is passing. Don't edit this code.`)
+      // console.log(`Exit passTest()`)
+      return testArray;
+    }
+  // Tests are passed.
+    function nameGrabber(y) {
+      // console.log(y);
+      // console.log(`2: enter nameGrabber()`)
+      // console.log(`nameGrabber() is a function that isolates the names of each animal in the array. It contains a control flow using for logic that turns a name like "jackal, asiatic" into a name like "asiatic jackal."`);
+      let names = [];
+      let x;
+      array.forEach((animal) => names.push(`${(animal.animal_name).toLowerCase()}`));
+      // console.log(`names[0] =`, names[0]);
+      // console.log(`typeof names[0] =`, typeof names[0]);
+      // console.log(`typeof names =`, typeof names);
+        for (let i=0;i<names.length; i++){
+          // console.log(`things`);
+          // console.log(names[0]);
+          if(names[i].includes(', ')){
+            // console.log(`something`);
+            // yes! I got it!!!!
+            const scrambledName = names[i];
+            const [last, first] = scrambledName.split(`, `)
+            // console.log(`this is the thing that I'm printing for the purpose of the thing:`, last);
+            // console.log(`and this is the thing for which the purpose of the other thing I will now print:`, first);
+            // console.log(`And all put together, I'm going to print that the unbuggered name looks like: ${(first).toLowerCase()}${last}`)
+            names[i] = `${first} ${last}`
+          }
+      }
+      // The above logic loop corrects the common name issue that was bugging me.
+      // console.log(`Animal names:${names}`);
+      // console.log(names);
+      // console.log(`The names array contains an all lowercase array of animals' commonplace names.`)
+      let scientificNames = [];
+      array.forEach((animal) => scientificNames.push(`${animal.scientific_name}`));
+      // console.log(`Scientific names:${scientificNames}`);
+      // console.log(scientificNames[1]);
+      // console.log(`The scientificNames array contains properly capitalized scientific names.`);
 
-  function animalNames(array){
-    let namesArray = []
-    array.forEach(animal => namesArray.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
-    console.log(namesArray);
-    return namesArray;
-  }
-  
-  animalNames(zooAnimals);
+        function printMessage(z){
+          // console.log(`3. enter printMessage()`)
+            console.log(`The scientific name for the ${names[z]} is "${scientificNames[z]}".`);
+          
+          // console.log(`exit printMessage()`);
+        }
+        // console.log(`calling printMessage();`)
+        printMessage(y);
+      // console.log(`exit nameGrabber()`)
+      }
 
-  /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
+  passTest();
+  nameGrabber(x);
+} 
+
+
+
+
+
+animalNames(zooAnimals);
+
+
+
+/* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
   Use lowerCaseNames to do the following:
   1. Receive the zooAnimals array as an argument passed from a parameter 
@@ -91,13 +201,13 @@ const zooAnimals = [
   💡 NOTE: Do some research for other methods that can help help you
   */
 
-  function lowerCaseNames(array){
-    return array.map(animals => `${animals.animal_name.toLowerCase()}`);
-  }
-  
-  // lowerCaseNames(zooAnimals)
-  
-  /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
+function lowerCaseNames(array) {
+  return array.map((animals) => `${animals.animal_name.toLowerCase()}`);
+}
+
+// lowerCaseNames(zooAnimals)
+
+/* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Use lowPopulationAnimals to do the following: 
   1. Receive the zooAnimals array as an argument passed from a parameter 
@@ -105,15 +215,15 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(array){
-    const endangered = array.filter(animals => animals.population < 5)
-    console.log(endangered)
-    return endangered;
-  }
-  
-  // lowPopulationAnimals(zooAnimals);
+function lowPopulationAnimals(array) {
+  const endangered = array.filter((animals) => animals.population < 5);
+  console.log(endangered);
+  return endangered;
+}
 
-  /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
+// lowPopulationAnimals(zooAnimals);
+
+/* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
   USe USApop to do the following:
   1. Receive the zooAnimals array as an argument passed from a parameter 
@@ -122,29 +232,30 @@ const zooAnimals = [
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-  function USApop(array){
-    const totalPop = array.population.reduce(
-      (previousValue, currentValue) => previousValue + currentValue,
-      initialValue
-      );
+function USApop(array) {
+  const totalPop = array.population.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    initialValue
+  );
+}
 
-  }
+// var arr = [{x:1}, {x:2}, {x:4}];
+// var result = arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
+// console.log(result);  // 7
+// This is some example code from Cassey Chu on Stack Overflow, on this page: https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties
+// I pasted it here for reference so that I could stop flipping through screens to understand it in the context of my own code. I pasted it below to tinker with different values until I got the hang of the monkey bars.
+function exampleCode(arr) {
+  let Array = [...arr];
+  console.log(Array);
+  let result = arr.reduce(function (acc, obj) {
+    return acc + obj.x;
+  }, 0);
+  console.log(result); // 7
+}
+// exampleCode(zooAnimals)
 
-  // var arr = [{x:1}, {x:2}, {x:4}];
-  // var result = arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
-  // console.log(result);  // 7
-  // This is some example code from Cassey Chu on Stack Overflow, on this page: https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties
-  // I pasted it here for reference so that I could stop flipping through screens to understand it in the context of my own code. I pasted it below to tinker with different values until I got the hang of the monkey bars.
-    function exampleCode(arr){
-      let Array = [...arr];
-      console.log(Array)
-      let result = arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
-      console.log(result);  // 7
-    }
-    // exampleCode(zooAnimals)
-
-  // 🦁🦁🦁 Callbacks 🦁🦁🦁  
-  /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
+// 🦁🦁🦁 Callbacks 🦁🦁🦁
+/* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
   Use the higher-order function called consume to do the following:
     1. Receive 3 parameters: a, b and cb. The first two parameters (a and b) can take any argument (we can pass any value as an argument) and the last parameter (cb) accepts a callback
     2. Return the invocation of cb taking a and b its arguments
@@ -152,51 +263,45 @@ const zooAnimals = [
     💡 NOTE: The tests for 'consume' will pass if it is created correctly and also after you correctly complete the functions 'add' and 'greeting' below in Step 2.
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
-  }
- 
-  
-  // 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁
+function consume(/*Your Code Here */) {
+  /*Your Code Here */
+}
 
- /*  Use add to do the following:
+// 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁
+
+/*  Use add to do the following:
  1. Receive two numbers as an argument that are passed in from its first and second parameters
  2. Return the sum of those numbers
  */
 
-function add(/*Your Code Here */){
-    /*Your Code Here*/
-  }
-
+function add(/*Your Code Here */) {
+  /*Your Code Here*/
+}
 
 /* Use multiply to do the following:
 1. Receive two numbers as an argument that are passed in from its first and second parameters
 2. Return the product of those numbers
 */
 
-function multiply(/*Your Code Here */){
-   /*Your Code Here */
-  }
+function multiply(/*Your Code Here */) {
+  /*Your Code Here */
+}
 
-
- /* Use greeting to do the following:
+/* Use greeting to do the following:
 1. Receive two strings (a first name and last name) as an argument that are passed in from its first and second parameters
 2. Return "Hello {first-name} {last-name}, nice to meet you!"
 💡 NOTE: The string returned must match the format above or the test will not pass!
 */
 
-function greeting(/*Your Code Here */){
-   return /*Your Code Here */
-  }
-  
-  
-// 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
+function greeting(/*Your Code Here */) {
+  return; /*Your Code Here */
+}
+
+// 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
 // console.log(consume(2, 2, add)); // 4
 // console.log(consume(10, 16, multiply)); // 160
 // console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
-
-
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
 
@@ -211,79 +316,55 @@ function greeting(/*Your Code Here */){
 - Instances of CuboidMaker should initialize `length`, `width` and `height` properties
 */
 
-function CuboidMaker(/*Your Code Here */){
+function CuboidMaker(/*Your Code Here */) {
   /*Your Code Here */
 }
-
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   💡 NOTE: Formula for cuboid volume: length * width * height   
 */
 
-
-
-
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
   Create another method called surfaceArea using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
   💡 NOTE: Formula for cuboid surface area: 2 * (length * width + length * height + width * height)  
 */
 
-
-
-
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker (not auto graded)🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
-
-
-
-
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
 // console.log(cuboid.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
- 
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //Using CuboidMakerTwo, take your prototypes from above and refactor into class syntax. Then, create an object called cuboidTwo that uses the new keyword to use our CuboidMakerTwo class.
- 
-class CuboidMakerTwo{
 
-}
-
-
-
+class CuboidMakerTwo {}
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
 // console.log(cuboidTwo.volume()); // 100
 // console.log(cuboidTwo.surfaceArea()); // 130
 
-
-
-
-
-  
-
-
-  /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-  function foo(){
-    console.log('its working');
-    return 'bar';
-  }
-  foo();
-  module.exports = {
-    foo,
-    summation,
-    animalNames,
-    lowerCaseNames,
-    lowPopulationAnimals,
-    USApop,
-    consume, 
-    add,
-    multiply,
-    greeting,
-    CuboidMaker,
-    CuboidMakerTwo
-  }
+/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
+function foo() {
+  console.log("its working");
+  return "bar";
+}
+foo();
+module.exports = {
+  foo,
+  summation,
+  animalNames,
+  lowerCaseNames,
+  lowPopulationAnimals,
+  USApop,
+  consume,
+  add,
+  multiply,
+  greeting,
+  CuboidMaker,
+  CuboidMakerTwo,
+};
